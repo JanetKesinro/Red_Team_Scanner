@@ -1,5 +1,7 @@
 # 🚀 Agentic AI SaaS Report: AetherOps Workflow Engine
 
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/02db2a6c-d325-4efc-bc24-76e982cd6940" />
+
 ---
 
 ## 1. Executive Summary
