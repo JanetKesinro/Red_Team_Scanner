@@ -185,6 +185,8 @@ User Render  <── Live UI Feed <── Execution Sandbox  <── Action Plan
    - Case B (Failure): Analyze the error (e.g., API rate-limit, missing column) and dynamically generate an alternative plan or code correction.
 6. Delivery: The output is serialized and streamed to the React client via WebSockets or Server-Sent Events (SSE). The UI updates dynamically, rendering color-coded logs, execution statistics, and the final generated assets.
 
+<img width="728" height="434" alt="System_Architecture" src="https://github.com/user-attachments/assets/194dc9c8-aa9a-406a-b311-8629248e4f1c" />
+
 ---
 
 ## 5. Agentic AI Design
@@ -246,6 +248,8 @@ We enforce an explicit boundary line on the client interface and backend. Restri
 3. The model's reasoning leading to this action.
 4. The projected cost and impact.
 The execution only resumes once the authorized supervisor clicks "Approve", injecting their signed cryptographic session token into the server thread.
+
+<img width="728" height="437" alt="Agentic AI Design" src="https://github.com/user-attachments/assets/a293e423-1ca5-4275-88b0-db75c365e5d3" />
 
 ---
 
@@ -386,6 +390,8 @@ Agentic AI systems introduce unique vulnerabilities that go far beyond standard 
   1. High-impact tools are explicitly labeled in the tool configuration schema with `requires_approval: true`.
   2. The backend state machine prevents execution of approved-gated tools unless a cryptographically signed supervisor approval signature is appended to the active session state.
 
+<img width="761" height="385" alt="Secuirty and Risk Management" src="https://github.com/user-attachments/assets/103feb39-3b49-45c4-90d7-753d1b175d2a" />
+
 ---
 
 ### OWASP Top 10 for Agentic AI & LLM Alignment
@@ -480,6 +486,8 @@ Model Query ──> Context Check ──>[Cache Hit (90% Cost Saved)] ──> Fa
 ### Failover & Resilience
 - API Circuit Breakers: If an external integration API (e.g., Slack, Jira) experiences downtime, a circuit breaker pattern halts agent execution, updates the task state to `BLOCKED_BY_DEPENDENCY`, and prevents the agent from looping fruitlessly.
 - Graceful Degradation: If the primary high-tier model is unavailable, the system automatically falls back to secondary models, alerting the user that advanced reasoning may be temporarily limited.
+
+<img width="755" height="353" alt="Scalability and Performance" src="https://github.com/user-attachments/assets/e293d544-cbaa-437f-b095-01bc84011376" />
 
 ---
 
